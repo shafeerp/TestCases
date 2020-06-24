@@ -7,7 +7,7 @@
 
 
 typealias NewsResponse = (Bool,String?) -> Void
-
+import Foundation
 class NewsViewModel {
     
     var isFetchingAPI               = Bindable<Bool>()
@@ -38,7 +38,7 @@ class NewsViewModel {
     func generateNewsAPIParameters() -> [String:Any] {
         var params = [String:Any]()
         params["q"] = "bitcoin"
-        params["from"] = "2020-05-23"
+        params["from"] = Date().convertToFormat()
         params["sortBy"] = "publishedAt"
         params["apiKey"] = "c9a8fa2da18946c789a18bdb8cf6575c"
         return params

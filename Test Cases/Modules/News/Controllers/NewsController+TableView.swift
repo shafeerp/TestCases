@@ -15,8 +15,7 @@ extension NewsController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NewsCell.self), for: indexPath) as? NewsCell,let viewModel = newsViewModel, let newsResponse = viewModel.newsResponse else { return UITableViewCell() }
-        cell.textLabel?.text = newsResponse[indexPath.row].title
-        cell.detailTextLabel?.text = newsResponse[indexPath.row].description
+        cell.updateCellContent(newsResponse[indexPath.row])
         return cell
     }
 }

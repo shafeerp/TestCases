@@ -16,6 +16,7 @@ extension NewsController {
     }
     
     fileprivate func setupTableView() {
+        tableView.tableFooterView = UIView()
         tableView.register(NewsCell.self, forCellReuseIdentifier: String(describing: NewsCell.self))
     }
     
