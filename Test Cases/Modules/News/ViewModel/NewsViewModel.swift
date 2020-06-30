@@ -14,7 +14,7 @@ class NewsViewModel {
     var newsResponse                : [Articles]?
     var apiClient                   : APIClient
     
-    init(apiClient : APIClient) {
+    init(apiClient : APIClient = APIClient()) {
         self.apiClient = apiClient
     }
     
