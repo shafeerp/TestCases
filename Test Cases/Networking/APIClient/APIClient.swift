@@ -9,14 +9,20 @@ import Foundation
 
 typealias APICompletion<T:Decodable> = (T?,Error?) -> Void
 
-extension URLRequestGenerator {
+class APIClient {
     
-    func fetchAPIResponse<T:Decodable>(completion : @escaping APICompletion<T>) {
-        guard let urlRequest = generateURLRequest() else {
+    var session : URLSession
+    
+    init(session : URLSession = URLSession.shared) {
+        self.session = session
+    }
+    
+    func fetchAPIResponse<T:Decodable>(urlRequest : URLRequest?,completion : @escaping APICompletion<T>) {
+        guard let urlRequest = urlRequest else {
             completion(nil,nil)
             return
         }
-        URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+        session.dataTask(with: urlRequest) { (data, _, error) in
             if let apiError = error {
                 completion(nil,apiError)
                 return
@@ -26,7 +32,6 @@ extension URLRequestGenerator {
                 return
             }
             do {
-                
                 let model : T = try JSONDecoder().decode(T.self, from: data)
                 completion(model,nil)
                 
@@ -37,3 +42,4 @@ extension URLRequestGenerator {
         }.resume()
     }
 }
+

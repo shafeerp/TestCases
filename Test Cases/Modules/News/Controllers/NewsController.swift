@@ -19,7 +19,7 @@ class NewsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsViewModel = NewsViewModel()
+        newsViewModel = NewsViewModel(apiClient : APIClient())
         viewModelBinder()
         setupLayout()
         fetchNewsResponse()

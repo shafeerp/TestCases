@@ -18,7 +18,6 @@
 		8B81748024A25BD200F44214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B81747F24A25BD200F44214 /* SceneDelegate.swift */; };
 		8B81748724A25BD600F44214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B81748624A25BD600F44214 /* Assets.xcassets */; };
 		8B81748A24A25BD600F44214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B81748824A25BD600F44214 /* LaunchScreen.storyboard */; };
-		8B81749524A25BD700F44214 /* Test_CasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B81749424A25BD700F44214 /* Test_CasesTests.swift */; };
 		8B8174A024A25BD700F44214 /* Test_CasesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B81749F24A25BD700F44214 /* Test_CasesUITests.swift */; };
 		8B8174B424A25C6500F44214 /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8174B324A25C6500F44214 /* APIEndPoints.swift */; };
 		8B8174B724A25CB900F44214 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8174B624A25CB900F44214 /* NetworkingHelper.swift */; };
@@ -33,6 +32,9 @@
 		8B8174D524A26F8100F44214 /* NewsController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8174D424A26F8100F44214 /* NewsController+UI.swift */; };
 		8B8174D724A26F8900F44214 /* NewsController+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8174D624A26F8900F44214 /* NewsController+API.swift */; };
 		8B8174D924A2706000F44214 /* NewsController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8174D824A2706000F44214 /* NewsController+TableView.swift */; };
+		8B92153824A5D31F00D41653 /* NewsAPIRequestBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92153724A5D31F00D41653 /* NewsAPIRequestBodyModel.swift */; };
+		8BED24E424AAE8450087ECD9 /* NewsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED24E324AAE8450087ECD9 /* NewsViewModelTests.swift */; };
+		8BED24E824AAE88F0087ECD9 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED24E724AAE88F0087ECD9 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +69,6 @@
 		8B81748924A25BD600F44214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B81748B24A25BD600F44214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B81749024A25BD700F44214 /* Test CasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test CasesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B81749424A25BD700F44214 /* Test_CasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_CasesTests.swift; sourceTree = "<group>"; };
 		8B81749624A25BD700F44214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B81749B24A25BD700F44214 /* Test CasesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test CasesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B81749F24A25BD700F44214 /* Test_CasesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_CasesUITests.swift; sourceTree = "<group>"; };
@@ -85,6 +86,10 @@
 		8B8174D424A26F8100F44214 /* NewsController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsController+UI.swift"; sourceTree = "<group>"; };
 		8B8174D624A26F8900F44214 /* NewsController+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsController+API.swift"; sourceTree = "<group>"; };
 		8B8174D824A2706000F44214 /* NewsController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsController+TableView.swift"; sourceTree = "<group>"; };
+		8B92153724A5D31F00D41653 /* NewsAPIRequestBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRequestBodyModel.swift; sourceTree = "<group>"; };
+		8BED24E224AAE8450087ECD9 /* Test CasesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test CasesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8BED24E324AAE8450087ECD9 /* NewsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelTests.swift; sourceTree = "<group>"; };
+		8BED24E724AAE88F0087ECD9 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +179,8 @@
 		8B81749324A25BD700F44214 /* Test CasesTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B81749424A25BD700F44214 /* Test_CasesTests.swift */,
+				8BED24E524AAE86C0087ECD9 /* Networking */,
+				8BED24E124AAE8170087ECD9 /* ViewModel */,
 				8B81749624A25BD700F44214 /* Info.plist */,
 			);
 			path = "Test CasesTests";
@@ -320,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8174CB24A26A1C00F44214 /* NewsModel.swift */,
+				8B92153724A5D31F00D41653 /* NewsAPIRequestBodyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +339,23 @@
 				8B586ACB24A3983300ED6E3D /* NewsCell+ViewRender.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8BED24E124AAE8170087ECD9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BED24E324AAE8450087ECD9 /* NewsViewModelTests.swift */,
+				8BED24E224AAE8450087ECD9 /* Test CasesTests-Bridging-Header.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8BED24E524AAE86C0087ECD9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8BED24E724AAE88F0087ECD9 /* MockURLProtocol.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +429,7 @@
 					};
 					8B81748F24A25BD700F44214 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 8B81747924A25BD200F44214;
 					};
 					8B81749A24A25BD700F44214 = {
@@ -472,6 +497,7 @@
 				8B586AD024A3995400ED6E3D /* CommonHelper+Protocols.swift in Sources */,
 				8B8174BA24A25D1200F44214 /* NewsRouter.swift in Sources */,
 				8B586ACA24A3982400ED6E3D /* NewsCell+UI.swift in Sources */,
+				8B92153824A5D31F00D41653 /* NewsAPIRequestBodyModel.swift in Sources */,
 				8B8174D924A2706000F44214 /* NewsController+TableView.swift in Sources */,
 				8B586AC824A396F400ED6E3D /* Extensions+UIVIew.swift in Sources */,
 				8B586AD224A39A0600ED6E3D /* Extensions+UIImageView.swift in Sources */,
@@ -493,7 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B81749524A25BD700F44214 /* Test_CasesTests.swift in Sources */,
+				8BED24E424AAE8450087ECD9 /* NewsViewModelTests.swift in Sources */,
+				8BED24E824AAE88F0087ECD9 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +714,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GM56TVH29;
 				INFOPLIST_FILE = "Test CasesTests/Info.plist";
@@ -698,6 +726,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Shafeer.Test-CasesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test CasesTests/ViewModel/Test CasesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test Cases.app/Test Cases";
@@ -709,6 +739,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4GM56TVH29;
 				INFOPLIST_FILE = "Test CasesTests/Info.plist";
@@ -720,6 +751,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Shafeer.Test-CasesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test CasesTests/ViewModel/Test CasesTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test Cases.app/Test Cases";

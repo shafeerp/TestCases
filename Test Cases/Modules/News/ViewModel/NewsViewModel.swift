@@ -12,11 +12,17 @@ class NewsViewModel {
     
     var isFetchingAPI               = Bindable<Bool>()
     var newsResponse                : [Articles]?
+    var apiClient                   : APIClient
     
+    init(apiClient : APIClient) {
+        self.apiClient = apiClient
+    }
+    
+
     func getAllNewsDatum(completion : @escaping NewsResponse) {
         isFetchingAPI.value = true
         
-        NewsRouter.GenerateAllNews(generateNewsAPIParameters()).fetchAPIResponse { [weak self] (value : NewsModel?, error) in
+        apiClient.fetchAPIResponse(urlRequest : NewsRouter.GenerateAllNews(generateNewsAPIParameters()).generateURLRequest()) { [weak self] (value : NewsModel?, error) in
             guard let selfObject = self else {
                 completion(false,nil)
                 return
@@ -34,7 +40,7 @@ class NewsViewModel {
             completion(true,nil)
         }
     }
-    
+
     func generateNewsAPIParameters() -> [String:Any] {
         var params = [String:Any]()
         params["q"] = "bitcoin"
@@ -42,5 +48,8 @@ class NewsViewModel {
         params["sortBy"] = "publishedAt"
         params["apiKey"] = "c9a8fa2da18946c789a18bdb8cf6575c"
         return params
+    }
+    func getName() -> String {
+        return "Shafeer"
     }
 }

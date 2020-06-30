@@ -10,6 +10,7 @@ import UIKit
 
 extension UIImageView {
     func downloaded(_ urlString: String) {
+        image = nil
         image =  UIImage(named: "placeholder")
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
