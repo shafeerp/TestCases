@@ -94,4 +94,57 @@ class NewsViewModelTests: XCTestCase {
             }
             waitForExpectations(timeout: 1, handler: nil)
         }
+    
+    func testGetMoviesAPI_Failure_SelfNil() {
+        guard let expectedURL = URL(string: "http://newsapi.org/v2/everything") else {
+            XCTFail()
+            return
+        }
+        let moviesExpectation = expectation(description: "Movies API")
+        let response = HTTPURLResponse(url: expectedURL, statusCode: 400, httpVersion: nil, headerFields: nil)!
+        MockURLProtocol.requestInfo = (response,nil)
+        
+        viewModel?.getAllNewsDatum { (isSucess, error) in
+            XCTAssertNil(error)
+            XCTAssertFalse(isSucess)
+            moviesExpectation.fulfill()
+        }
+        viewModel = nil
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testGetMoviesAPI_Success_WorngData() {
+        guard let viewModel = viewModel,let expectedURL = URL(string: "http://newsapi.org/v2/everything") else {
+            XCTFail()
+            return
+        }
+        let moviesExpectation = expectation(description: "Movies API")
+        let json = """
+        {
+            "articles": "test"
+        }
+
+        """
+        let data = json.data(using: .utf8)
+        let response = HTTPURLResponse(url: expectedURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        MockURLProtocol.requestInfo = (response,data)
+        
+        viewModel.getAllNewsDatum { (isSucess, error) in
+            XCTAssertNil(error)
+            XCTAssertFalse(isSucess)
+            moviesExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testGenerateNewsAPIParameters() {
+        guard let viewModel = viewModel else {
+            XCTFail()
+            return
+        }
+        let params = viewModel.generateNewsAPIParameters()
+        XCTAssertEqual(params["q"] as? String, "bitcoin")
+        XCTAssertEqual(params["from"] as? String, Date().convertToFormat())
+        XCTAssertEqual(params["apiKey"] as? String, "c9a8fa2da18946c789a18bdb8cf6575c")
+    }
 }

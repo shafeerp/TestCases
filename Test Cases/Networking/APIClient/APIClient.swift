@@ -35,8 +35,8 @@ class APIClient {
                 let model : T = try JSONDecoder().decode(T.self, from: data)
                 completion(model,nil)
                 
-            }catch let parsingError {
-                completion(nil,parsingError)
+            }catch {
+                completion(nil,nil)
             }
             
         }.resume()

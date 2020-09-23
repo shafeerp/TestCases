@@ -49,7 +49,4 @@ class NewsViewModel {
         params["apiKey"] = "c9a8fa2da18946c789a18bdb8cf6575c"
         return params
     }
-    func getName() -> String {
-        return "Shafeer"
-    }
 }
